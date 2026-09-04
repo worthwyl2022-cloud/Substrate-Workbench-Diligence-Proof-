@@ -1,0 +1,6 @@
+{
+  "name": "Cranium Core — Cognitive Substrate Workbench",
+  "description": "Directive-governed cognitive substrate workbench featuring creative constitutions, dual NLI/LLM-judge contradiction gates, quarantine write-back, and reproducible canon benchmarks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
