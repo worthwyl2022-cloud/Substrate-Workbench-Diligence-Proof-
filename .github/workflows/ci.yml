@@ -13,27 +13,26 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 20
-          cache: npm
+          bun-version: latest
       - name: Install dependencies
-        run: npm ci
+        run: bun install
       - name: Build
-        run: npm run build
+        run: bun run build
       - name: Generate corpus manifest
-        run: node scripts/generate-corpus-manifest.mjs
+        run: bun run scripts/generate-corpus-manifest.mjs
       - name: Run deterministic baseline benchmark
         env:
           BENCHMARK_RUN_ID: ci-baseline
-        run: npm run benchmark
+        run: bun run benchmark
       - name: Verify baseline artifact integrity
         run: sha256sum --check results/ci-baseline.json.sha256
       - name: Run deterministic engine benchmark
         env:
           BENCHMARK_RUN_ID: ci-engine
-        run: npm run benchmark:engine
+        run: bun run benchmark:engine
       - name: Verify engine artifact integrity
         run: sha256sum --check results/ci-engine.json.sha256
       - name: Upload benchmark artifacts
