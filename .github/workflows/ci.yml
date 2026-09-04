@@ -22,14 +22,22 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Run deterministic benchmark baseline
+      - name: Generate corpus manifest
+        run: node scripts/generate-corpus-manifest.mjs
+      - name: Run deterministic baseline benchmark
         env:
           BENCHMARK_RUN_ID: ci-baseline
         run: npm run benchmark
-      - name: Verify benchmark artifact integrity
+      - name: Verify baseline artifact integrity
         run: sha256sum --check results/ci-baseline.json.sha256
-      - name: Upload benchmark artifact
+      - name: Run deterministic engine benchmark
+        env:
+          BENCHMARK_RUN_ID: ci-engine
+        run: npm run benchmark:engine
+      - name: Verify engine artifact integrity
+        run: sha256sum --check results/ci-engine.json.sha256
+      - name: Upload benchmark artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ci-benchmark-baseline
-          path: results/ci-baseline.json*
+          name: ci-benchmarks
+          path: results/ci-*.json*

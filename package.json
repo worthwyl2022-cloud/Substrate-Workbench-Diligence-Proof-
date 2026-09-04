@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "benchmark": "node scripts/run-benchmark.mjs"
+    "benchmark": "node scripts/run-benchmark.mjs",
+    "benchmark:engine": "node scripts/run-benchmark-engine.mjs",
+    "corpus:manifest": "node scripts/generate-corpus-manifest.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

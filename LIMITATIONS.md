@@ -8,6 +8,7 @@ Cranium Core is a pre-revenue creative-governance prototype with a working archi
 
 - The initial `npm run benchmark` command validates corpus/receipt reproducibility, not live LLM accuracy.
 - Its baseline adapter intentionally returns expected labels and therefore must not be cited as detection-performance proof.
+- `npm run benchmark:engine` evaluates deterministic rule coverage against the frozen corpus only. It does not test semantic generalization, paraphrase robustness beyond the encoded rules, or LLM judge behavior.
 - Static values or narrative examples in the UI are not automatically empirical measurements.
 - A real-model benchmark must retain raw configuration, model identity, prompts, state hashes, actual outputs/verdicts, timing, and signed result artifacts.
 - The current corpus is finite. A successful run does not establish robust behavior on unknown paraphrases, unseen adversarial strategies, or long multi-turn contexts.

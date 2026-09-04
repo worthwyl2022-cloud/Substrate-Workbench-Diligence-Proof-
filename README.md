@@ -9,19 +9,42 @@ npm install
 npm run dev
 ```
 
-## Reproducible benchmark artifact
+## Reproducible benchmark artifacts
+
+### Corpus manifest
+
+```bash
+npm run corpus:manifest
+```
+
+Generates `corpus/corpus-manifest.json` and its SHA-256 sidecar from the frozen 24-case corpus and project constitutions.
+
+### Baseline integrity check
 
 ```bash
 npm run benchmark
 ```
 
-The command writes a JSON result file and matching SHA-256 sidecar under `results/`. Set `BENCHMARK_RUN_ID` to make the output file name stable:
+Writes a JSON result file and matching SHA-256 sidecar under `results/`. This validates corpus-and-artifact reproducibility; it does not evaluate the engine.
 
 ```bash
 BENCHMARK_RUN_ID=baseline-001 npm run benchmark
 ```
 
-The initial runner is explicitly a **deterministic baseline**: it validates the frozen 24-case corpus manifest and evidence-artifact workflow. It does not call an LLM and must not be presented as a live-model performance evaluation. Replace its adapter with the real substrate evaluator before recording empirical live-execution measurements.
+### Deterministic engine evaluation
+
+```bash
+npm run corpus:manifest
+npm run benchmark:engine
+```
+
+Runs the actual deterministic substrate gate against all 24 cases and exports a verified evidence artifact. Set a stable run ID:
+
+```bash
+BENCHMARK_RUN_ID=engine-001 npm run benchmark:engine
+```
+
+**Important**: This evaluates rule-coverage accuracy only. It does not call an external LLM and must not be cited as semantic generalization or live-model performance.
 
 ## Evidence labels
 

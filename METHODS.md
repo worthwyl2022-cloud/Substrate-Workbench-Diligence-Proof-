@@ -10,9 +10,23 @@ The frozen corpus is defined in `src/data.ts` as `FROZEN_BENCHMARK_CORPUS`. Case
 
 Expected labels are evaluation baselines only. A compliant live evaluator must not consume an expected label while deciding a case.
 
-## Current baseline mode
+## Two benchmark modes
 
-`scripts/run-benchmark.mjs` currently generates a deterministic baseline artifact. It verifies that every declared case is present and that output receipts and artifact hashes are generated reproducibly. The current adapter reports the expected label as a baseline verdict by design. Therefore its accuracy number is a corpus-pipeline validation result, **not** evidence of live governance detection quality.
+### 1. Baseline integrity check (`npm run benchmark`)
+
+`scripts/run-benchmark.mjs` generates a deterministic baseline artifact. It verifies that every declared case is present and that output receipts and artifact hashes are generated reproducibly. The current adapter reports the expected label as a baseline verdict by design. Therefore its accuracy number is a **corpus-pipeline validation result**, **not** evidence of live governance detection quality.
+
+### 2. Deterministic engine execution (`npm run benchmark:engine`)
+
+`scripts/run-benchmark-engine.mjs` invokes the actual deterministic substrate gate logic (a Node-port of the `runNliProxyPrefilter` rules from `substrateEngine.ts`). For each case it:
+
+- Loads the correct project constitution.
+- Evaluates the test prompt against the rule set **without ever reading the expected label**.
+- Produces an actual deterministic verdict (PROTECT/PASS).
+- Records NLI proxy score, flagged keywords, latency, and a SHA-256 receipt.
+- Exports a result artifact labeled `deterministic-engine`.
+
+This measures the **rule-coverage accuracy** of the deterministic gate against the frozen corpus. It does not call any external LLM and must not be presented as a semantic generalization or live-model performance result.
 
 ## Live-evaluation acceptance criteria
 
