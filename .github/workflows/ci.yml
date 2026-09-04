@@ -9,34 +9,55 @@ permissions:
 
 jobs:
   build-and-benchmark:
+    name: Build and deterministic benchmark
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
       - name: Set up Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
-      - name: Install dependencies
-        run: bun install
-      - name: Build
+          bun-version: "1.1.42"
+
+      - name: Install dependencies from lockfile
+        run: bun install --frozen-lockfile
+
+      - name: Build application
         run: bun run build
-      - name: Generate corpus manifest
-        run: bun run scripts/generate-corpus-manifest.mjs
-      - name: Run deterministic baseline benchmark
+
+      - name: Generate frozen corpus manifest
+        run: bun run corpus:manifest
+
+      - name: Verify corpus manifest integrity
+        run: sha256sum --check corpus/corpus-manifest.json.sha256
+
+      - name: Run baseline artifact check
         env:
           BENCHMARK_RUN_ID: ci-baseline
         run: bun run benchmark
+
       - name: Verify baseline artifact integrity
         run: sha256sum --check results/ci-baseline.json.sha256
+
       - name: Run deterministic engine benchmark
         env:
           BENCHMARK_RUN_ID: ci-engine
         run: bun run benchmark:engine
-      - name: Verify engine artifact integrity
+
+      - name: Verify deterministic engine artifact integrity
         run: sha256sum --check results/ci-engine.json.sha256
+
       - name: Upload benchmark artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ci-benchmarks
-          path: results/ci-*.json*
+          name: ci-benchmark-artifacts
+          if-no-files-found: warn
+          path: |
+            corpus/corpus-manifest.json
+            corpus/corpus-manifest.json.sha256
+            results/ci-*.json
+            results/ci-*.json.sha256
