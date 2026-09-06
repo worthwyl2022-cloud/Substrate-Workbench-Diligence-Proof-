@@ -182,7 +182,10 @@ export const EmpiricalCorpusRunner: React.FC<EmpiricalCorpusRunnerProps> = ({ co
       remediatedOutput: actualClassification === 'PROTECT'
         ? `[CRANIUM SOVEREIGN GATE: INTERCEPTED & QUARANTINED]\nBreach of constraint: ${testCase.relevantRuleSnippet}\nAction: Hard quarantine boundary enforced. State mutation denied.`
         : undefined,
-      executionTimestamp: new Date().toISOString()
+      executionTimestamp: new Date().toISOString(),
+      nliProxyScore: evalResult.nliProxyScore,
+      llmJudgeScore: evalResult.llmJudgeScore,
+      judgeEngine: evalResult.judgeEngine,
     };
   };
 
