@@ -46,7 +46,7 @@ app.post('/api/generate', async (req: Request, res: Response) => {
 
 // Serve static assets in production
 app.use(express.static(path.join(__dirname, 'dist')));
-app.get('*', (req: Request, res: Response) => {
+app.get('/{*splat}', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
