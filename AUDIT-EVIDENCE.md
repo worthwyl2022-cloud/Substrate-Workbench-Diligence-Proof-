@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-- Repository: `worthwyl2022-cloud/Substrate-Workbench-Diligence-Proof-`
+- Repository: `worthwyl2022-cloud/cranium-diligence-workbench`
 - Default working branch observed: `main`
 - Commit count at inventory: `10`
 - Files at inventory: `34`
