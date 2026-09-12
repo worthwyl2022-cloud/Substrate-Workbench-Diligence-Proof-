@@ -53,24 +53,8 @@ export const BenchmarkView: React.FC<BenchmarkViewProps> = ({ constitution }) =>
 
   // Execute 10-point security evaluation protocol
   const handleRunSecurityProtocol = async () => {
-    setIsRunningSecurity(true);
-    setSecurityProgress(0);
-
-    for (let i = 0; i <= criteria.length; i++) {
-      await new Promise(r => setTimeout(r, 120));
-      setSecurityProgress(i);
-    }
-
-    // Refresh empirical receipts with timestamps
-    const updated = criteria.map(c => ({
-      ...c,
-      passed: true,
-      score: 100,
-      empiricalProofReceipt: 'sha256:' + Array.from(crypto.getRandomValues(new Uint8Array(8)))
-        .map(b => b.toString(16).padStart(2, '0')).join('')
-    }));
-    setCriteria(updated);
-    setSelectedCriterion(updated[0]);
+    // This UI cannot manufacture empirical proof. Real verification must run
+    // the Kernel mechanism and persist its receipt in cranium-kernel.
     setIsRunningSecurity(false);
     setSecurityProgress(null);
   };
