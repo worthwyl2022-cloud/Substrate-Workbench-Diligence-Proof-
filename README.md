@@ -7,7 +7,7 @@ This repository is the diligence and review workbench for the Cranium portfolio.
 ## Portfolio navigation
 
 - **Canonical authority boundary:** [cranium-kernel](https://github.com/worthwyl2022-cloud/cranium-kernel)
-- **Application and cognitive layer:** [Cranium-Core-](https://github.com/worthwyl2022-cloud/cranium-application-core)
+- **Application and cognitive layer:** [Cranium-Core-](https://github.com/worthwyl2022-cloud/Cranium-Core-)
 - **Conceptual/reference substrate:** [Cranium-Substrate-](https://github.com/worthwyl2022-cloud/cranium-substrate-reference)
 
 ## Operating boundary
