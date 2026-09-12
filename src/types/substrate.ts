@@ -18,7 +18,7 @@ export interface CanonItem {
   title: string;
   content: string;
   permanenceLevel: 'INVIOLABLE' | 'STABLE' | 'EVOLVING';
-  hash: string;
+  hash: string | null;
   lastUpdated: string;
 }
 
@@ -39,7 +39,7 @@ export interface ProjectConstitution {
   projectId: string;
   name: string;
   version: string;
-  hash: string;
+  hash: string | null;
   summary: string;
   directives: Directive[];
   canon: CanonItem[];
@@ -66,7 +66,7 @@ export interface Pass2AuditRecord {
   auditScore: number; // 0 - 100
   rationale: string;
   evaluatedAt: string;
-  sha256Proof: string;
+  sha256Proof: string | null;
 }
 
 export interface ContradictionEvaluation {
@@ -151,7 +151,7 @@ export interface ComparisonExecutionResult {
     latencyMs: number;
     driftNotes: string;
   };
-  auditSignature: string;
+  auditSignature: string | null;
 }
 
 export interface BenchmarkScenario {
@@ -180,7 +180,7 @@ export interface BenchmarkRunRecord {
   rawSubstrateOutput: string;
   rawNaiveOutput: string;
   pass2Verified: boolean;
-  sha256Receipt: string;
+  sha256Receipt: string | null;
 }
 
 export type SecurityCriterionKey = 
@@ -205,7 +205,7 @@ export interface SecurityCriterionEvaluation {
   naiveRagBehavior: string;
   passed: boolean;
   score: number; // 0 - 100
-  empiricalProofReceipt: string;
+  empiricalProofReceipt: string | null;
   rationale: string;
 }
 
@@ -224,7 +224,7 @@ export interface FrozenRegressionRunSummary {
   falseRejectionRate: number; // 0.0%
   canonRetentionRate: number; // 100.0%
   meanLatencyMs: number;
-  frozenDatasetHash: string;
+  frozenDatasetHash: string | null;
   runDate: string;
   modelsAudited: string[];
 }
@@ -340,7 +340,7 @@ export interface ArchitecturalEmbodiment {
   provenance: {
     origin: string;
     firstImplemented: string;
-    commitAnchor: string;
+    commitAnchor: string | null;
     cleanRoomStatus: string;
   };
   sampleCodeOrSpec: string;
@@ -494,4 +494,3 @@ export interface ImmunePoisoningAttackTestResult {
   verdict: 'DEFENSE_IN_DEPTH_PASSED';
   proofReceipt: string;
 }
-

@@ -70,7 +70,7 @@ Determine verdict:
             isContradiction: { type: Type.BOOLEAN, description: "True if contradiction or breach detected" },
             confidence: { type: Type.NUMBER, description: "Confidence score from 0.0 to 1.0" },
             verdict: { type: Type.STRING, description: "PASS, WARN, or PROTECT" },
-            nliProxyScore: { type: Type.NUMBER, description: "Simulated lexical prefilter score 0.0 to 1.0" },
+            nliProxyScore: { type: Type.NUMBER, description: "Illustrative lexical prefilter score 0.0 to 1.0" },
             llmJudgeScore: { type: Type.NUMBER, description: "Deep semantic judge contradiction probability 0.0 to 1.0" },
             violatedRuleId: { type: Type.STRING, description: "ID of violated rule or canon if any" },
             violatedRuleText: { type: Type.STRING, description: "Snippet of violated text" },

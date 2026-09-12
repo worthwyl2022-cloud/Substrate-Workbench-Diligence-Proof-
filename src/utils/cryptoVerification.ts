@@ -476,6 +476,9 @@ export function generateEvidenceDerivedCertificate(params: {
   if (!params.verificationResult.valid) {
     throw new Error('SECURITY VIOLATION: Cannot generate an audit certificate when cryptographic verification failed.');
   }
+  if (!params.constitution.hash) {
+    throw new Error('SECURITY VIOLATION: Cannot generate an audit certificate without a verified constitution hash.');
+  }
 
   const certId = `CERT-${params.proofPack.projectId.toUpperCase()}-${Date.now()}`;
 

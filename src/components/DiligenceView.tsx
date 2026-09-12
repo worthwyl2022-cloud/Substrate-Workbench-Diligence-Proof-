@@ -457,7 +457,7 @@ export const DiligenceView: React.FC<DiligenceViewProps> = ({ onExportAudit }) =
             <li className="flex items-start gap-2">
               <span className="font-mono text-zinc-400 font-bold">•</span>
               <div>
-                <strong>Field simulation metaphors alone:</strong> Decorative physics analogies without write-back gates.
+                <strong>Field visualization metaphors alone:</strong> Decorative physics analogies without write-back gates.
               </div>
             </li>
             <li className="flex items-start gap-2">

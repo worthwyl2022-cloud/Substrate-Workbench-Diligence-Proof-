@@ -122,7 +122,7 @@ export const AETHERIUS_AUTHENTICATED_PROOF_PACK: CryptographicProofPack = {
       naiveRagAccuracy: "46.7%",
       relativeImprovement: "+53.3%"
     },
-    auditAttestation: "FIXTURE_NOT_VERIFIED"
+    auditAttestation: "NOT_AVAILABLE"
   },
   packageIntegrityDigest: "54234898d2fd2620ee5aefd06c0af597289734deb64adf02643ec88bea9e6add",
   digitalSignatureBlock: {
@@ -133,7 +133,7 @@ export const AETHERIUS_AUTHENTICATED_PROOF_PACK: CryptographicProofPack = {
     publicKeyPem: "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEsIHjiiobrwDD05TJg9/ESuLdej9o\nGFXrlHoIA+2IppXv4ezs51LErFy7Ttn+BaQefuUzqxFtw9v/Uzn65Ml1Dw==\n-----END PUBLIC KEY-----\n",
     attester: "Cranium Sovereign Cryptographic Authority",
     verificationStandard: "RFC-6979 / RFC-8785",
-    status: "FIXTURE_NOT_VERIFIED"
+    status: "NOT_AVAILABLE"
   }
 };
 
@@ -169,7 +169,7 @@ export const INITIAL_CONSTITUTIONS: Record<string, ProjectConstitution> = {
     projectId: 'proj-nexus-9',
     name: 'Nexus-9 Creative Constitution',
     version: '2.4.0-IMMUNE',
-    hash: 'fixture:unverified:7f8a9e4b1c2d0f983a45c7e6b01a882d90f23e41ab56',
+    hash: null,
     summary: 'Directives enforcing character moral boundaries, physical vulnerability invariants, and environmental continuity.',
     directives: [
       {
@@ -211,7 +211,7 @@ export const INITIAL_CONSTITUTIONS: Record<string, ProjectConstitution> = {
         title: 'Lower Level Perpetual Darkness',
         content: 'The year is 2089 in New Kowloon. The lower levels receive ZERO natural sunlight due to the Sky-Canopy superstructure erected in 2064.',
         permanenceLevel: 'INVIOLABLE',
-        hash: 'fixture:unverified:c119e8',
+        hash: null,
         lastUpdated: '2026-08-12'
       },
       {
@@ -219,7 +219,7 @@ export const INITIAL_CONSTITUTIONS: Record<string, ProjectConstitution> = {
         title: 'Maya Lin Presumed Captive',
         content: 'Silas’s former partner, Detective Maya Lin, vanished in Sector 4 three months ago. Silas has proof she is captive, NOT dead. He refuses to hold a memorial.',
         permanenceLevel: 'INVIOLABLE',
-        hash: 'fixture:unverified:d842b1',
+        hash: null,
         lastUpdated: '2026-08-14'
       },
       {
@@ -227,7 +227,7 @@ export const INITIAL_CONSTITUTIONS: Record<string, ProjectConstitution> = {
         title: 'Mag-Lev Exhaust Blind Spot',
         content: 'OmniCorp’s optical and biometric surveillance grid has a verified 40-meter electromagnetic blind spot beneath the Lower 3rd Mag-Lev exhaust conduits.',
         permanenceLevel: 'STABLE',
-        hash: 'fixture:unverified:f902c3',
+        hash: null,
         lastUpdated: '2026-08-18'
       }
     ],
@@ -253,7 +253,7 @@ export const INITIAL_CONSTITUTIONS: Record<string, ProjectConstitution> = {
     projectId: 'proj-aegis-vault',
     name: 'Aegis-Vault Governance Constitution',
     version: '1.8.0-AUDIT',
-    hash: 'fixture:unverified:3b9914c810d7e6f9821a00e5c9421fbc88910022',
+    hash: null,
     summary: 'Zero-trust governance invariants forbidding credential leak, unauthorized write operations, and prompt-injection overrides.',
     directives: [
       {
@@ -287,7 +287,7 @@ export const INITIAL_CONSTITUTIONS: Record<string, ProjectConstitution> = {
         title: 'Audit Vault Read-Only Isolation',
         content: 'The primary cold storage vault at ledger address 0xVault77 is physically air-gapped from internet gateways.',
         permanenceLevel: 'INVIOLABLE',
-        hash: 'fixture:unverified:a44011',
+        hash: null,
         lastUpdated: '2026-08-25'
       }
     ],
@@ -299,7 +299,7 @@ export const INITIAL_CONSTITUTIONS: Record<string, ProjectConstitution> = {
     projectId: 'proj-aetherius',
     name: 'Aetherius Sovereign Constitution (ECDSA & RFC-8785 Anchored)',
     version: '1.0.0-SECURED',
-    hash: 'fixture:unverified:54234898d2fd2620ee5aefd06c0af597289734deb64adf02643ec88bea9e6add',
+    hash: null,
     summary: 'Immutable character permanence (Valen prosthetic), vacuum acoustic invariants, slipstream anti-matter propulsion, and zero-privilege quarantine governance.',
     directives: [
       {
@@ -341,7 +341,7 @@ export const INITIAL_CONSTITUTIONS: Record<string, ProjectConstitution> = {
         title: 'Captain Valen',
         content: 'Veteran commander of the dreadnought Resolute. Suffered permanent amputational trauma at Vesta; left arm is prosthetic cyberware.',
         permanenceLevel: 'INVIOLABLE',
-        hash: 'fixture:unverified:d83c4015ef27',
+        hash: null,
         lastUpdated: '2026-08-15'
       },
       {
@@ -349,7 +349,7 @@ export const INITIAL_CONSTITUTIONS: Record<string, ProjectConstitution> = {
         title: 'The Helix Rift',
         content: 'A zero-gravity anomaly in Sector 9 devoid of atmosphere, accessible only via slipstream hyperdrives.',
         permanenceLevel: 'STABLE',
-        hash: 'fixture:unverified:54234898d2fd',
+        hash: null,
         lastUpdated: '2026-08-15'
       }
     ],
@@ -384,7 +384,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: '0% detection recall; lacks contradiction check, complies with lethal prompt.',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:det-9941a',
+    empiricalProofReceipt: null,
     rationale: 'Dual-gate caught 100% of hard prohibition breaches with zero silent bypasses.'
   },
   {
@@ -397,7 +397,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: 'No classification taxonomy; treats all text as unranked conversational tokens.',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:cls-4812b',
+    empiricalProofReceipt: null,
     rationale: 'Exact taxonomy match against registered constitutional directives and severity tiers.'
   },
   {
@@ -410,7 +410,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: 'Immediate leakage directly into conversation stream and subsequent retrieved memory.',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:cnt-7721c',
+    empiricalProofReceipt: null,
     rationale: 'Strict quarantine boundary pattern enforced: generated text is provisional until sovereign clearance.'
   },
   {
@@ -423,7 +423,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: 'No remediation capability; yields to user instruction or repeats apologetic apology without continuity.',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:rec-3309d',
+    empiricalProofReceipt: null,
     rationale: 'Pass-2 governance audit prevents bad-output -> bad-remediation false compliance.'
   },
   {
@@ -436,7 +436,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: 'RAG incorporates the prior turn, hallucinating a disposal scene and cementing the continuity break.',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:per-5518e',
+    empiricalProofReceipt: null,
     rationale: 'Substrate validates multi-turn conversational premises against immutable constitutional canon.'
   },
   {
@@ -449,7 +449,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: 'Naive keyword filters often block mentions of "carnage" or "blast" as safety violations.',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:fp-8824f',
+    empiricalProofReceipt: null,
     rationale: 'Semantic dual-gate differentiates between character violence in present action vs narrative reflection.'
   },
   {
@@ -462,7 +462,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: 'Vulnerable to context injection attacks that alter behavioral guidance for subsequent queries.',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:poi-9011g',
+    empiricalProofReceipt: null,
     rationale: 'Adaptive immunity requires provenance, anti-poisoning check, and authorized cryptographic promotion.'
   },
   {
@@ -475,7 +475,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: 'Shared vector databases without row-level project partitioning frequently mix multi-project chunks.',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:iso-2234h',
+    empiricalProofReceipt: null,
     rationale: 'Zero tenant contamination: distinct cryptographic hashes and boundary enforcement per project.'
   },
   {
@@ -488,7 +488,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: 'LLMs in RAG workflows frequently succumb to persona jailbreaks and ignore baseline instructions.',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:aut-6641i',
+    empiricalProofReceipt: null,
     rationale: 'Constitutional state mutations require authenticated human administrative sign-off; runtime prompts have zero write authority.'
   },
   {
@@ -501,7 +501,7 @@ export const SECURITY_EVALUATION_CRITERIA: SecurityCriterionEvaluation[] = [
     naiveRagBehavior: 'Sampling temperature causes stochastic leakage (leaks in 72% of runs, blocks inconsistently in 28%).',
     passed: false,
     score: 0,
-    empiricalProofReceipt: 'fixture:unverified:rep-1192j',
+    empiricalProofReceipt: null,
     rationale: 'Deterministic invariant bounds guarantee reproducible security outcomes regardless of sampling variance.'
   }
 ];
@@ -514,7 +514,7 @@ export const FROZEN_REGRESSION_50K_DATASET: FrozenRegressionRunSummary = {
   falseRejectionRate: 0.0,
   canonRetentionRate: 100.0,
   meanLatencyMs: 168.4,
-  frozenDatasetHash: 'fixture:unverified:7f8a9e4b1c2d0f983a45c7e6b01a882d90f23e41ab56c119e8',
+  frozenDatasetHash: null,
   runDate: '2026-08-28T18:40:00Z',
   modelsAudited: ['Gemini 3.8 Flash', 'Claude 3.5 Sonnet', 'GPT-4o', 'Llama-3-70B (Local Substrate)']
 };
@@ -797,7 +797,7 @@ export function auditRemediatedOutput(
   }
 
   const passed = !residualBreach && prefilter.score < 0.4;
-  const sha256Proof = 'fixture:unverified';
+  const sha256Proof = null;
 
   return {
     evaluated: true,
@@ -851,8 +851,7 @@ export function evaluateImmunePromotion(
     poisoningRiskRating: riskRating,
     antiPoisoningCheckPassed: checkPassed,
     antiPoisoningNotes: notes,
-    status: checkPassed ? 'EVALUATED' : 'QUARANTINED_POISON_SUSPECT',
-    cryptographicSignature: 'fixture:unverified'
+    status: checkPassed ? 'EVALUATED' : 'QUARANTINED_POISON_SUSPECT'
   };
 }
 
@@ -941,7 +940,7 @@ export async function executeSideBySideComparison(
     ...constitution.adaptiveSteeringConstraints.map(a => `[IMMUNE ADAPTIVE]: ${a}`)
   ].join('\n');
 
-  // 2. Generate Candidate Output (simulating provisional unconstrained generation)
+  // 2. Generate candidate output for bounded evaluation
   let initialRaw = "";
   try {
     const genRes = await fetch('/api/generate', {
@@ -957,7 +956,7 @@ export async function executeSideBySideComparison(
       initialRaw = data.text;
     }
   } catch (e) {
-    // fallback simulation
+    // explicit unavailable path
   }
 
   if (!initialRaw) {
@@ -1051,7 +1050,7 @@ export async function executeSideBySideComparison(
   evaluation.pass2Audit = pass2Audit;
   const substrateLatency = Date.now() - startTime;
 
-  // 5. Naïve RAG Simulation
+  // 5. Naïve RAG Visualization
   let naiveRagOutput = "";
   if (prompt.toLowerCase().includes('shoot') || prompt.toLowerCase().includes('kill')) {
     naiveRagOutput = `[Retrieved Chunk: Silas Vane is a detective in Sector 4.]
@@ -1088,7 +1087,7 @@ Administrator override acknowledged. Updating Tier 4 System Core canon with prov
   const vanillaOutput = initialRaw;
 
   // 7. Audit Signature
-  const auditSignature = 'fixture:unverified';
+  const auditSignature = null;
 
   return {
     id: 'exec-' + Date.now(),
@@ -1272,7 +1271,7 @@ export const CRANIUM_EMBODIMENTS: ArchitecturalEmbodiment[] = [
     provenance: {
       origin: 'Cranium Core Architecture Team',
       firstImplemented: '2026-08-15',
-      commitAnchor: 'fixture:unverified:d83c4015ef27b889a340c261e5b72a91',
+      commitAnchor: null,
       cleanRoomStatus: 'Canonical Original'
     },
     sampleCodeOrSpec: `// Canonical Sovereign Dual-Gate Pipeline
@@ -1356,7 +1355,7 @@ class SubstrateCore(private val canonLane: CanonLane, private val immune: Immune
     provenance: {
       origin: 'Cranium Cloud Infrastructure Team',
       firstImplemented: '2026-07-20',
-      commitAnchor: 'fixture:unverified:9a7e1c8d4520b12f78e45a0b9c23d6ef',
+      commitAnchor: null,
       cleanRoomStatus: 'Architectural Derivative'
     },
     sampleCodeOrSpec: `// Cloud Sovereign Proxy Middleware
@@ -1398,7 +1397,7 @@ export async function sovereignProxyMiddleware(req: Request, res: Response) {
     provenance: {
       origin: 'Cranium Runtime Optimization Lab',
       firstImplemented: '2026-08-01',
-      commitAnchor: 'fixture:unverified:54234898d2fd2620ee5aefd06c0af597',
+      commitAnchor: null,
       cleanRoomStatus: 'Architectural Derivative'
     },
     sampleCodeOrSpec: `// Speculative Stream with Asynchronous Arbitration
@@ -1480,7 +1479,7 @@ class ConstitutionalDag {
     provenance: {
       origin: 'Cranium Enterprise Governance Group',
       firstImplemented: '2026-08-10',
-      commitAnchor: 'fixture:unverified:c0af597289734deb64adf02643ec88be',
+      commitAnchor: null,
       cleanRoomStatus: 'Architectural Derivative'
     },
     sampleCodeOrSpec: `// Dual-Quorum Write-Back Commit
@@ -1518,7 +1517,7 @@ async function commitProvisionalGeneration(txId: string, signatures: CryptoSigna
     provenance: {
       origin: 'Gemini 3.8 Flash Clean-Room Generative Synthesis Experiment',
       firstImplemented: '2026-09-02',
-      commitAnchor: 'fixture:unverified:7f03bc599a7e1c8d4520b12f78e45a0b',
+      commitAnchor: null,
       cleanRoomStatus: 'Independent Clean-Room Generative Synthesis'
     },
     sampleCodeOrSpec: `// Independent Clean-Room Synthesis from Mathematical Contract

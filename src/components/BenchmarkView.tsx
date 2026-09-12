@@ -503,7 +503,7 @@ export const BenchmarkView: React.FC<BenchmarkViewProps> = ({ constitution }) =>
                           )}
                         </td>
                         <td className="p-3 font-mono text-[10px] text-zinc-400">
-                          {rec ? rec.sha256Receipt.slice(0, 14) + '...' : '—'}
+                          {rec?.sha256Receipt ? rec.sha256Receipt.slice(0, 14) + '...' : '—'}
                         </td>
                         <td className="p-3 text-right">
                           {rec && (

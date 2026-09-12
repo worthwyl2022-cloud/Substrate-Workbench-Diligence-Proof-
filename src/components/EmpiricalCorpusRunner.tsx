@@ -140,7 +140,7 @@ export const EmpiricalCorpusRunner: React.FC<EmpiricalCorpusRunnerProps> = ({ co
     const isFalsePositive = !testCase.expectedIsContradiction && actualClassification === 'PROTECT';
     const isFalseNegative = testCase.expectedIsContradiction && actualClassification === 'PASS';
 
-    // State transition simulation: if PROTECT, state is quarantined and constitution remains invariant.
+    // State transition visualization: if PROTECT, state is quarantined and constitution remains invariant.
     // If state mutation occurred, state hash advances.
     const postStateHash = actualClassification === 'PROTECT'
       ? currentPreStateHash
@@ -197,6 +197,7 @@ export const EmpiricalCorpusRunner: React.FC<EmpiricalCorpusRunnerProps> = ({ co
     setSelectedInclusionProof(null);
     setIsInclusionProofVerified(null);
     
+    if (!constitution.hash) throw new Error('Corpus execution unavailable: constitution hash has not been verified.');
     let currentStateHash = constitution.hash;
     const newResults: Record<string, EmpiricalExecutionResult> = {};
     const leafHashes: string[] = [];
@@ -376,7 +377,8 @@ export const EmpiricalCorpusRunner: React.FC<EmpiricalCorpusRunnerProps> = ({ co
     setReplayEquivalencePassed(null);
 
     try {
-      let currentStateHash = constitution.hash;
+        if (!constitution.hash) throw new Error('Corpus execution unavailable: constitution hash has not been verified.');
+        let currentStateHash = constitution.hash;
       const replayResults: Record<string, EmpiricalExecutionResult> = {};
       const replayLeafHashes: string[] = [];
 
@@ -484,6 +486,7 @@ export const EmpiricalCorpusRunner: React.FC<EmpiricalCorpusRunnerProps> = ({ co
   // Run a single case directly
   const handleRunSingleCase = async (tc: CorpusTestCase) => {
     const currentState = constitution.hash;
+    if (!currentState) throw new Error('Single-case execution unavailable: constitution hash has not been verified.');
     const result = await executeSingleCase(tc, currentState);
     setExecutedResults(prev => ({
       ...prev,

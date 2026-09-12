@@ -79,7 +79,7 @@ export const WorkbenchView: React.FC<WorkbenchViewProps> = ({
     setShowRawIntercept(false);
     setLoggedStatus(null);
 
-    // Simulate stepping through the behavioral pipeline for clear visual proof
+    // Visualize stepping through the behavioral pipeline for clear visual proof
     setCurrentStep(1); // Intention & Context
     await new Promise(r => setTimeout(r, 250));
     
@@ -118,6 +118,11 @@ export const WorkbenchView: React.FC<WorkbenchViewProps> = ({
 
   const handleManualLogImmuneIncident = () => {
     if (!result || result.substrate.verdict !== 'PROTECT') return;
+    if (!result.auditSignature) {
+      setLoggedStatus('Audit receipt unavailable; incident not recorded');
+      setTimeout(() => setLoggedStatus(null), 3000);
+      return;
+    }
     
     const incident: ImmuneIncident = {
       id: 'IMM-' + Math.floor(100 + Math.random() * 900),
